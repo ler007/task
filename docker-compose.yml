@@ -1,0 +1,44 @@
+version: '3.7'
+services:
+ nodeabc:
+        build:
+            context: ./alphaclient
+            dockerfile: Dockerfile
+            args:
+                SSH_MASTER_USER: ${SSH_MASTER_USER}
+                SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+        container_name: nodeabc
+        hostname: nodeabc
+        networks:
+            app_net:
+               ipv4_address: 172.16.238.11
+ nodexyz:
+         build:
+            context: ./alphaclient
+            dockerfile: Dockerfile
+            args:
+               SSH_MASTER_USER: ${SSH_MASTER_USER}
+               SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+         container_name: nodexyz
+         hostname: nodexyz
+         networks:
+            app_net:
+               ipv4_address: 172.16.238.12
+ alphaserver:
+         build:
+            context: ./alphaserver
+            dockerfile: Dockerfile
+            args:
+               SSH_MASTER_USER: ${SSH_MASTER_USER}
+               SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+         container_name: alphaserver
+         hostname: alphaserver
+         networks:
+            app_net:
+               ipv4_address: 172.16.238.10
+networks:
+ app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.238.0/24"
