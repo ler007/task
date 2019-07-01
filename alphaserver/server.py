@@ -1,13 +1,14 @@
 from flask import Flask, session, request, jsonify, render_template
 import os, json
 app = Flask('alpa')
+app.static_folder = '/root/static'
+app.template_folder = '/root/templates'
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
-@app.before_first_request
-def _declareStuff():
-    if not os.path.exists(os.path.join(app.static_folder, 'data.json')):
-        with open(os.path.join(app.static_folder, 'data.json'), 'w'): pass
-
+#@app.before_first_request
+#def _declareStuff():
+#    if not os.path.exists(os.path.join(app.static_folder, 'data.json')):
+#        with open(os.path.join(app.static_folder, 'data.json'), 'w'): pass
 
 @app.route("/")
 def hello():

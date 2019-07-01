@@ -18,9 +18,9 @@ COPY requirements.txt /root/requirements.txt
 RUN pip3 install --no-cache-dir -r /root/requirements.txt
 
 RUN mkdir /root/static
+RUN touch /root/static/data.json
 RUN mkdir /root/templates
 COPY index.html /root/templates/index.html
-#COPY run-server.sh /root/run-server.sh
 
 COPY ssh_config /etc/ssh/ssh_config
 COPY sshd_config /etc/ssh/sshd_config
@@ -35,5 +35,5 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 COPY server.py /root/server.py
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
- 
+
 CMD tail -f /dev/null

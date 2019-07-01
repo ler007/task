@@ -5,10 +5,7 @@
 3. cd task
 4. sudo docker-compose build && sudo docker-compose up -d
 
-
-
-
-note : 
+# note
 alphaserver 
 ip addr 172.16.238.10
 user : server
@@ -21,5 +18,10 @@ pass : abc
 
 nodexyz
 ip addr 172.16.238.12
+
 user : xyz
 pass : xyz
+
+# to do
+1. open in browser localhost:5000
+2. try ssh to nodeabc and nodexyz
