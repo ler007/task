@@ -7,21 +7,20 @@
 
 # note
 alphaserver 
-ip addr 172.16.238.10
-user : server
-pass : server
+- ip addr 172.16.238.10
+- user : server
+- pass : server
 
 nodeabc
-ip addr 172.16.238.11
-user : abc
-pass : abc
+- ip addr 172.16.238.11
+- user : abc
+- pass : abc
 
 nodexyz
-ip addr 172.16.238.12
-
-user : xyz
-pass : xyz
+- ip addr 172.16.238.12
+- user : xyz
+- pass : xyz
 
 # to do
 1. open in browser localhost:5000
-2. try ssh to nodeabc and nodexyz
+2. try ssh to nodeabc and nodexyz (ex: ssh abc@172.16.238.11)
