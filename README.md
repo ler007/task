@@ -1,9 +1,11 @@
 # task
 
 1. install docker https://docs.docker.com/install/
-2. git clone https://github.com/ler007/task.git
-3. cd task
-4. sudo docker-compose build && sudo docker-compose up -d
+2. install docker-compose https://docs.docker.com/compose/install/
+3. install git https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+4. git clone https://github.com/ler007/task.git
+5. cd task
+6. sudo docker-compose build && sudo docker-compose up -d
 
 # note
 alphaserver 
