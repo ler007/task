@@ -1,0 +1,37 @@
+<h1>Data</h1>
+
+<table>
+    <thead>
+        <tr>
+            <td>Server</td>
+            <td>Total</td>
+        </tr>
+    </thead>
+    <tbody id="data">
+    </tbody>
+</table>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<script>
+(function worker() {
+  $.ajax({
+    url: 'retrieve',
+    success: function(data) {
+        var html = ""
+        console.log(data)
+        $.each( data['data'], function( key, value ) {
+
+            html += "<tr><td>"+key+"</td><td>"+value['total']+"</td></tr>";
+        });
+        $('#data').html(html)
+    },
+    complete: function() {
+      // Schedule the next request when the current one's complete
+      setTimeout(worker, 5000);
+    }
+  });
+})();
+</script>

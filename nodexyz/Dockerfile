@@ -26,6 +26,8 @@ RUN /usr/local/bin/user.sh
  
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
+
+COPY client.py /root/client.py
  
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
  
