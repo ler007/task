@@ -1,7 +1,7 @@
 FROM ubuntu:latest
  
-ARG SSH_MASTER_USER
-ARG SSH_MASTER_PASS
+ARG SSH_ABC_USER
+ARG SSH_ABC_PASS
  
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \

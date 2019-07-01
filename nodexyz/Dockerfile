@@ -1,7 +1,7 @@
 FROM ubuntu:latest
  
-ARG SSH_SERVER_USER
-ARG SSH_SERVER_PASS
+ARG SSH_XYZ_USER
+ARG SSH_XYZ_PASS
  
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \

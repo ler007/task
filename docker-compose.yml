@@ -2,11 +2,11 @@ version: '3.7'
 services:
  nodeabc:
         build:
-            context: ./alphaclient
+            context: ./nodeabc
             dockerfile: Dockerfile
             args:
-                SSH_MASTER_USER: ${SSH_MASTER_USER}
-                SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+                SSH_ABC_USER: ${SSH_ABC_USER}
+                SSH_ABC_PASS: ${SSH_ABC_PASS}
         container_name: nodeabc
         hostname: nodeabc
         networks:
@@ -14,11 +14,11 @@ services:
                ipv4_address: 172.16.238.11
  nodexyz:
          build:
-            context: ./alphaclient
+            context: ./nodexyz
             dockerfile: Dockerfile
             args:
-               SSH_MASTER_USER: ${SSH_MASTER_USER}
-               SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+               SSH_XYZ_USER: ${SSH_XYZ_USER}
+               SSH_XYZ_PASS: ${SSH_XYZ_PASS}
          container_name: nodexyz
          hostname: nodexyz
          networks:
@@ -29,8 +29,8 @@ services:
             context: ./alphaserver
             dockerfile: Dockerfile
             args:
-               SSH_MASTER_USER: ${SSH_MASTER_USER}
-               SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+               SSH_SERVER_USER: ${SSH_SERVER_USER}
+               SSH_SERVER_PASS: ${SSH_SERVER_PASS}
          container_name: alphaserver
          hostname: alphaserver
          networks:
